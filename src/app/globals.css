@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #faf9f6;
+  --foreground: #2d2a26;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, 2px); }
+  100% { transform: translate(0); }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-flicker { animation: flicker 2s ease-in-out infinite; }
+.animate-slide-up { animation: slideUp 0.6s ease-out forwards; }
+.animate-glitch { animation: glitch 0.3s linear; }
+
+.animate-slide-up-delay-1 { animation: slideUp 0.6s ease-out 0.1s forwards; opacity: 0; }
+.animate-slide-up-delay-2 { animation: slideUp 0.6s ease-out 0.2s forwards; opacity: 0; }
+.animate-slide-up-delay-3 { animation: slideUp 0.6s ease-out 0.3s forwards; opacity: 0; }
