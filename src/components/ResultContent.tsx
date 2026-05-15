@@ -60,8 +60,12 @@ export function ResultContent({ answersStr }: { answersStr: string }) {
         </blockquote>
         <div className="w-full bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100 flex flex-col items-center gap-3">
           <p className="text-sm text-zinc-500 text-center">想看完整分析报告？解锁专属判词解读</p>
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-zinc-400 line-through">¥9.9</span>
+            <span className="text-sm font-semibold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-full">¥0.1 · 1毛钱体验</span>
+          </div>
           <Link href={`/unlock?code=${personality.code}`} className="px-8 py-3 bg-purple-600 text-white rounded-full text-sm font-medium hover:bg-purple-700 transition-all shadow-lg shadow-purple-200">
-            解锁完整报告 ¥3.99
+            立即解锁完整报告
           </Link>
           <p className="text-xs text-zinc-300">含完整判词 + 离谱分析 + 梗标签</p>
         </div>

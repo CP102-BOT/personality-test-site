@@ -53,9 +53,18 @@ export function UnlockContent({ personalityCode }: { personalityCode: string }) 
         <div className="text-4xl">🔓</div>
         <h1 className="text-2xl font-bold text-zinc-800 text-center">解锁「{personality.name}」完整报告</h1>
         <div className="w-full bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-100 flex flex-col items-center gap-4">
-          <p className="text-sm text-zinc-600 text-center">扫码打赏 ¥3.99，获得解锁码</p>
-          <div className="w-48 h-48 bg-white rounded-xl border-2 border-dashed border-amber-200 flex items-center justify-center text-zinc-300 text-sm">收款码占位</div>
-          <p className="text-xs text-zinc-400 text-center">（上线后替换为真实收款码）<br />付款后请微信/私信获取解锁码</p>
+          <p className="text-xs text-zinc-400 text-center line-through">原价 ¥9.9</p>
+          <p className="text-2xl text-rose-600 font-bold text-center">¥0.1</p>
+          <p className="text-xs text-rose-400 text-center -mt-2">体验价 · 1毛钱解锁完整报告</p>
+          <p className="text-xs text-zinc-400 text-center mt-1">微信 / 支付宝扫码支付</p>
+          <div className="w-48 h-48 bg-white rounded-xl border border-amber-200 flex items-center justify-center overflow-hidden shadow-sm">
+            <div className="w-full h-full bg-gradient-to-br from-amber-50 to-orange-50 flex flex-col items-center justify-center gap-2 p-4">
+              <span className="text-4xl">💳</span>
+              <span className="text-xs text-zinc-400 text-center leading-relaxed">请上传你的<br />收款码图片</span>
+              <span className="text-[10px] text-zinc-300 font-mono bg-white/60 px-2 py-0.5 rounded">QR_PLACEHOLDER</span>
+            </div>
+          </div>
+          <p className="text-xs text-zinc-400 text-center">上线前请将上方占位替换为真实收款码图片<br />付款后请联系获取解锁码</p>
         </div>
         <div className="w-full flex flex-col gap-3">
           <label className="text-sm text-zinc-500">输入解锁码</label>

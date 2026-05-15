@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 
 export interface UnlockCode {
   code: string;
@@ -15,6 +15,7 @@ function genCode(): string {
 }
 
 export async function findCode(code: string): Promise<UnlockCode | null> {
+  const supabase = getSupabase();
   const { data, error } = await supabase
     .from("unlock_codes")
     .select("*")
@@ -25,6 +26,7 @@ export async function findCode(code: string): Promise<UnlockCode | null> {
 }
 
 export async function markCodeAsUsed(code: string): Promise<boolean> {
+  const supabase = getSupabase();
   const { error } = await supabase
     .from("unlock_codes")
     .update({ used: true, used_at: new Date().toISOString() })
@@ -34,6 +36,7 @@ export async function markCodeAsUsed(code: string): Promise<boolean> {
 }
 
 export async function getStats() {
+  const supabase = getSupabase();
   const { data: all, error } = await supabase.from("unlock_codes").select("*");
   if (error) return { total: 0, used: 0, unused: 0, codes: [] };
   const used = all.filter((c) => c.used).length;
@@ -46,6 +49,7 @@ export async function getStats() {
 }
 
 export async function generateCodes(count: number): Promise<string[]> {
+  const supabase = getSupabase();
   const newCodes: string[] = [];
   for (let i = 0; i < count; i++) {
     let code = genCode();

@@ -71,9 +71,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold tracking-wider text-purple-900">
               乱序人格研究所
             </h1>
-            <p className="text-xl text-zinc-400 tracking-widest text-sm">
-              DISORDERLY PERSONALITY LAB
-            </p>
+            <p className="text-sm text-zinc-400 tracking-widest uppercase">DISORDERLY PERSONALITY LAB</p>
           </div>
 
           <p className="text-lg text-zinc-600 leading-relaxed animate-slide-up-delay-1">

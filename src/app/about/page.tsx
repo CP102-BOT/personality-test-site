@@ -31,7 +31,7 @@ export default function AboutPage() {
               要钱吗？
             </h3>
             <p className="text-sm text-zinc-500 leading-relaxed">
-              8题测试免费，基础结果免费。完整报告（判词+离谱分析+分享文案）需付费 ¥3.99 解锁。
+              8题测试免费，基础结果免费。完整报告（判词+离谱分析+分享文案）原价 ¥9.9，限时 ¥3.99 解锁。
             </p>
           </div>
 
