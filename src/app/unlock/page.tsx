@@ -1,19 +1,17 @@
-"use client";
-
-import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { UnlockContent } from "@/components/UnlockContent";
 
-function UnlockPageInner() {
-  const searchParams = useSearchParams();
-  const code = searchParams.get("code") || "";
-  return <UnlockContent personalityCode={code} />;
+interface PageProps {
+  searchParams: Promise<{ code?: string }>;
 }
 
-export default function UnlockPage() {
+export default async function UnlockPage({ searchParams }: PageProps) {
+  const sp = await searchParams;
+  const code = sp.code || "";
+
   return (
     <Suspense fallback={<div className="flex-1 flex items-center justify-center p-6"><p className="text-zinc-400 animate-flicker">加载中...</p></div>}>
-      <UnlockPageInner />
+      <UnlockContent personalityCode={code} />
     </Suspense>
   );
 }
