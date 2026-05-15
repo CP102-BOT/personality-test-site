@@ -1,9 +1,0 @@
-name = "personality-test-site"
-pages_build_output_dir = "out"
-
-# 环境变量 - 生产环境
-# 需要去 Cloudflare Dashboard 设置
-# SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ADMIN_PASSWORD
-
-[env.production]
-vars = { }
